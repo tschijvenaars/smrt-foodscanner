@@ -50,9 +50,6 @@ def make_image_sets(height,width,x_trainname,x_valname,ipm="nearest"):
     x_valimgs = []
 
     for i in x_trainname:
-        #image = plt.imread(file_path_trainimages+i)
-        #image = tf.image.resize(image, size=[height , width],method=tf.image.ResizeMethod.NEAREST_NEIGHBOR)
-        #x_trainimgs.append(image.numpy())
         img = keras.preprocessing.image.load_img(
         file_path_trainimages + i, target_size=(height, width), interpolation = ipm
         )
@@ -60,9 +57,6 @@ def make_image_sets(height,width,x_trainname,x_valname,ipm="nearest"):
         x_trainimgs.append(img_array)
         
     for i in x_valname:
-        #image = plt.imread(file_path_trainimages+i)
-        #image = tf.image.resize(image, size=[height , width],method=tf.image.ResizeMethod.NEAREST_NEIGHBOR)
-        #x_valimgs.append(image.numpy())
         img = keras.preprocessing.image.load_img(
         file_path_trainimages + i, target_size=(height, width), interpolation = ipm
         )
